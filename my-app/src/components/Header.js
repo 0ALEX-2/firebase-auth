@@ -26,9 +26,19 @@ const Header = () => {
         })
     }
 
+    const handleDashboard=()=>{
+        if(loggedUser){
+            navigate("/dashboard")
+        }else{
+            alert("To access dashboard login first.")
+            navigate("/login")
+        }
+    }
+
   return (
     <div className='p-4 bg-teal-600 flex justify-around'>
-        <Link to="/dashboard" className='text-[20px]'>Dashboard</Link>
+       
+        <p className='text-[20px] cursor-pointer' onClick={handleDashboard}>Dashboard</p>
         <Link to="/" className='text-[20px]'>Registration</Link>
        
             { (loggedUser) ?  <Link to="/login" className='text-[20px]' onClick={logout}>Logout</Link> : <Link to="/login" className='text-[20px]'>Login</Link>}
