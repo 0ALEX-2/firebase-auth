@@ -24,13 +24,14 @@ const Register = () => {
       createUserWithEmailAndPassword(auth,email,password).then((user)=>{
         console.log(user);
       }).catch((err)=>console.log(err))
-        navigate("/")
+        navigate("/login")
     }
     const {email,password}=data
 
   return (
     <div>
-          <form className="border w-[400px] flex flex-col m-auto justify-center gap-4 items-center mt-[20%] p-5 rounded-md shadow-lg" onSubmit={handleSubmit}>
+        <h1 className='mt-[10%] text-[25px] font-bold py-6'>Create an Account</h1>
+          <form className="border w-[400px] flex flex-col m-auto justify-center gap-4 items-center  p-5 rounded-md shadow-lg" onSubmit={handleSubmit}>
         <h2 className="text-[22px] underline underline-offset-4 text-blue-700 font-bold">
           Registration Form
         </h2>
@@ -58,7 +59,7 @@ const Register = () => {
           value="Submit"
           className="bg-blue-400 px-4 rounded-md text-2xl text-white cursor-pointer hover:bg-blue-800"
         />
-          <p>Already have an account? <Link to="/" className='text-blue-500 underline'>Click here</Link> to Login</p>
+          <p>Already have an account? <Link to="/login" className='text-blue-500 underline'>Click here</Link> to Login</p>
       </form>
     </div>
   )
